@@ -24,7 +24,7 @@ let shapeCount = 0;
 
 function createShape() {
   if (shapeCount >= 25) {
-    return; 
+      return; // Exit the function without creating more shapes
   }
 
   const shapeSelect = document.getElementById('shapeSelect');
@@ -40,27 +40,38 @@ function createShape() {
   newShape.style.backgroundColor = color;
 
   if (shapeType === 'circle') {
-    newShape.style.borderRadius = '50%'; 
+      newShape.style.borderRadius = '50%'; // Create a circle
   }
 
   const shapeInfo = new Shape(shapeType, color);
 
   const infoText = document.createElement('p');
-  infoText.textContent = `Box ${shapeCount + 1}: ${shapeInfo.getInfo()}`; 
+  infoText.textContent = `Box ${shapeCount + 1}: ${shapeInfo.getInfo()}`; // Include box number
 
-  // clears shape information before adding new one
+  // Add click event to show/hide shape info
+  newShape.addEventListener('click', function(event) {
+      event.stopPropagation(); // Prevent event from bubbling up
+      infoText.style.display = 'block';
+  });
+
+  // Add click event to hide shape info when clicking outside the shape
+  document.addEventListener('click', function(event) {
+      if (event.target !== newShape) {
+          infoText.style.display = 'none';
+      }
+  });
+
+  // Clear existing shape information before adding new one
   const infoContainer = document.getElementById('shapeInfoContainer');
-  infoContainer.innerHTML = ''; // Clears previous info
+  infoContainer.innerHTML = ''; // Clear previous info
 
-  infoContainer.appendChild(infoText);
+  infoContainer.appendChild(infoText); // Append new shape info
 
   shapeContainer.appendChild(newShape);
 
   shapeCount++;
 
   if (shapeCount === 25) {
-    console.log('Shape limit reached. No more shapes will be added.');
+      console.log('Shape limit reached. No more shapes will be added.');
   }
 }
-
-

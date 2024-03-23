@@ -62,3 +62,6 @@ p {
   text-align: center;
 }
 
+.show-info {
+  display: block;
+}
