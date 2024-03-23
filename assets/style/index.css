@@ -1,2 +1,59 @@
+@charset "utf-8";
 
+body {
+  height: 100vh;
+}
+
+.shape-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  grid-gap: 5px; 
+  justify-content: center;
+  align-content: start; 
+  background-color: #f7f7f7; 
+  width: 500px;
+  height: 490px;
+  margin: 6px auto; 
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.shape {
+  width: 90px;
+  height: 90px;
+  margin: 0; 
+  cursor: pointer;
+}
+
+.options {
+  text-align: center;
+  margin-top: 10px;
+}
+
+h2 {
+  font-size: 50px;
+  margin-top: 50px;
+}
+
+#colorSelect , #shapeSelect {
+  padding: 10px;
+}
+
+button {
+  background-color: aquamarine;
+}
+
+button:hover {
+  background-color: rgb(163, 255, 224);
+}
+
+.opt-btn {
+  padding: 8px;
+  width: 163px;
+  border-radius: 3px;
+}
+
+p {
+  text-align: center;
+}
 
