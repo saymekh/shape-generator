@@ -41,6 +41,7 @@ h2 {
 
 #colorSelect , #shapeSelect {
   padding: 10px;
+  background-color: var(--background-color);
 }
 
 button {
@@ -54,8 +55,7 @@ button:hover {
 .opt-btn {
   padding: 8px;
   width: 163px;
-  border-radius: 3px;
-  background-color: var(--background-color); 
+  border-radius: 3px; 
 }
 
 p {
